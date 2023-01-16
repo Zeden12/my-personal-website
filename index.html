@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My portifolio website</title>
+        <link rel="stylesheet" type="text/css" href="/homepage.css">
+        
+        <link rel="stylesheet"
+        href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    </head>
+<body>
+    <header>
+        <a href="#" class="logo">ZED<span>Art</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="/homepage.html">home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/portifolio.html">Portifolio</a></li>
+            <li><a href="/blog.html">Blogs</a></li>
+            <li><a href="/contact.html">contact</a></li>
+            <li><a href="/Login.html">Login</a></li>
+        </ul>
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h5>Hello, I am</h5>
+            <h1>Ernest HAGUMA KWIZERA</h1>
+            <h6>Welcome To ZED<span>Art</span></h6>
+            <p>I Designed and develope services for customers of all sizes, specializing in creating stylish,
+                modern website, web services and online stores.
+            </p>
+            <a href="/cv.html" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="/assets/zeden.png.png" alt="">
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="classname">
+            @coppyright 2022 - ZEDArt    <a href="./contact me.html">kwizeraernez@gmail.com</a><br><span>+250781963232</span>
+            </div>
+        </div>
+    </footer>
+
+<script>
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar')
+
+menu.onclick = () => {
+  menu.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+};
+
+window.onscroll = () => {
+  menu.classList.remove('bx-b');
+  navbar.classList.remove('active');
+}
+
+const sr = ScrollReveal ({
+  distance: '60px',
+  duration: 2500,
+  reset: true
+})
+
+sr.reveal('.home-text',{delay:200, origin:'top'})
+sr.reveal('.home-img',{delay:400, origin:'top'})
+sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My portifolio website</title>
+        <link rel="stylesheet" type="text/css" href="/about.css">
+        
+        <link rel="stylesheet"
+        href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    </head>
+<body>
+    <header>
+        <a href="#" class="logo">ZED<span>Art</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="/index.html">home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/portifolio.html">Portifolio</a></li>
+            <li><a href="/blog.html">Blogs</a></li>
+            <li><a href="/contact me.html">contact</a></li>
+            <li><a href="/Login.html">Login</a></li>
+        </ul>
+    </header>
+
+    <section class="resume" id="resume">
+        <div class="center">
+            <h3>Education & experience</h3>
+        </div>
+
+        <div class="resume-content">
+            <div class="box">
+                <h6>April 2022 - present</h6>
+                <h4>BHSc in Infoormation Systems</h4>
+                <p>Here i lear a new technologies for recording and processing information were
+                 invented over the millennia, new capabilities appeared, and people became empowered
+                </p>
+                <h5>University of Rwanda</h5>
+            </div>
+
+            <div class="box">
+                <h6>April 2022 - present</h6>
+                <h4>BHSc in Infoormation Systems</h4>
+                <p>Here i lear a new technologies for recording and processing information were
+                 invented over the millennia, new capabilities appeared, and people became empowered
+                </p>
+                <h5>University of Rwanda</h5>
+            </div>
+
+            <div class="box">
+                <h6>April 2022 - present</h6>
+                <h4>BHSc in Infoormation Systems</h4>
+                <p>Here i lear a new technologies for recording and processing information were
+                 invented over the millennia, new capabilities appeared, and people became empowered
+                </p>
+                <h5>University of Rwanda</h5>
+            </div>
+
+            <div class="box">
+                <h6>April 2022 - present</h6>
+                <h4>BHSc in Infoormation Systems</h4>
+                <p>Here i lear a new technologies for recording and processing information were
+                 invented over the millennia, new capabilities appeared, and people became empowered
+                </p>
+                <h5>University of Rwanda</h5>
+            </div>
+
+            <div class="box">
+                <h6>April 2022 - present</h6>
+                <h4>BHSc in Infoormation Systems</h4>
+                <p>Here i lear a new technologies for recording and processing information were
+                 invented over the millennia, new capabilities appeared, and people became empowered
+                </p>
+                <h5>University of Rwanda</h5>
+            </div>
+
+            <div class="box">
+                <h6>April 2022 - present</h6>
+                <h4>BHSc in Infoormation Systems</h4>
+                <p>Here i lear a new technologies for recording and processing information were
+                 invented over the millennia, new capabilities appeared, and people became empowered
+                </p>
+                <h5>University of Rwanda</h5>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="classname">
+            @coppyright 2022 - ZEDArt    <a href="./contact me.html">kwizeraernez@gmail.com</a><br><span>+250781963232</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar')
+        
+        menu.onclick = () => {
+          menu.classList.toggle('bx-x');
+          navbar.classList.toggle('active');
+        };
+        
+        window.onscroll = () => {
+          menu.classList.remove('bx-b');
+          navbar.classList.remove('active');
+        }
+        
+        const sr = ScrollReveal ({
+          distance: '60px',
+          duration: 2500,
+          reset: true
+        })
+        
+        sr.reveal('.home-text',{delay:200, origin:'top'})
+        sr.reveal('.home-img',{delay:400, origin:'top'})
+        sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
+    </script>
+
+
+</body>
+</html>
