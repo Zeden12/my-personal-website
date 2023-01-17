@@ -1,26 +1,3 @@
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar')
-
-menu.onclick = () => {
-  menu.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-};
-
-window.onscroll = () => {
-  menu.classList.remove('bx-b');
-  navbar.classList.remove('active');
-}
-
-const sr = ScrollReveal ({
-  distance: '60px',
-  duration: 2500,
-  reset: true
-})
-
-sr.reveal('.home-text',{delay:200, origin:'top'})
-sr.reveal('.home-img',{delay:400, origin:'top'})
-sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
-
 // Get form elements
 const form = document.querySelector('form');
 const nameInput = document.getElementById('name');
@@ -45,7 +22,7 @@ form.addEventListener('submit', (e) => {
   const newMessage = {
     name,
     email,
-    message
+    message,
   };
 
   // Add new message to array
@@ -59,3 +36,34 @@ form.addEventListener('submit', (e) => {
   emailInput.value = '';
   messageInput.value = '';
 });
+
+  
+// const sendbtn = document.querySelector('.button');
+
+// let  messages = localStorage.getItem("messages")
+// if( messages == null){
+//   messages =[]
+// }
+// else{
+//   messages = JSON.parse(messages)
+//  }
+// sendbtn.addEventListener('click', (event) => {
+ 
+//  event.preventDefault();
+
+//  const email = document.querySelector('#email').value;
+//  const name = document.querySelector('#name').value;
+//  const issue = document.querySelector('#message').value;
+
+//  var message = {
+//    email,name,message
+//  }
+//   messages.push(message)
+// localStorage.setItem("messages",JSON.stringify(messages)),
+ 
+//  message.clear()
+//  name.clear()
+//  email.clear()
+
+// });
+

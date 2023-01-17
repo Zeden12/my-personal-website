@@ -1,63 +1,45 @@
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar')
 
-menu.onclick = () => {
-  menu.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-};
-
-window.onscroll = () => {
-  menu.classList.remove('bx-b');
-  navbar.classList.remove('active');
-}
-
-const sr = ScrollReveal ({
-  distance: '60px',
-  duration: 2500,
-  reset: true
-})
-
-sr.reveal('.home-text',{delay:200, origin:'top'})
-sr.reveal('.home-img',{delay:400, origin:'top'})
-sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
-
-
-const form = document.getElementById("login-form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const enteredUsername = form.elements.username.value;
-  const enteredPassword = form.elements.password.value;
-
-  // Get the current user data array from local storage
-  let userData = JSON.parse(localStorage.getItem("userData")) || [];
-
-  // Check if the entered data is already stored
-  let isUserExist = false;
-  for (let i = 0; i < userData.length; i++) {
-    if (enteredUsername === userData[i].username) {
-      isUserExist = true;
-      break;
-    }
-  }
-
-  if (!isUserExist) {
-    // Add the new user data to the array
-    userData.push({ username: enteredUsername, password: enteredPassword });
-    // Store the updated user data array in local storage
-    localStorage.setItem("userData", JSON.stringify(userData));
-  } else {
-    // Check if the entered data matches any stored data
-    let isAuthenticated = false;
-    for (let i = 0; i < userData.length; i++) {
-      if (enteredUsername === userData[i].username && enteredPassword === userData[i].password) {
-        isAuthenticated = true;
-        break;
-      }
-    }
-
-    // Give an alert if the entered data does not match any stored data
-    if (!isAuthenticated) {
-      alert("Invalid username or password. Please try again.");
-    }
-  }
-});
+        const form = document.querySelector(".Form-1")
+        
+        const loginBtn = document.querySelector(".button1")
+        loginBtn.addEventListener( "click",(event)=>{
+          event.preventDefault()
+          var usersl = JSON.parse(localStorage.getItem('UsersLogin')) || [];
+          var accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+          var loginData = {
+            loginEmail: document.getElementById('Email').value,
+            loginname:document.getElementById("Username").value,
+            loginPass: document.getElementById('Password').value
+          };
+          var currentUser = accounts.filter(user => user.email === loginData.loginEmail);
+          if(currentUser.length > 0) {
+        
+            if(currentUser[0].password !== loginData.loginPass) {
+        
+              alert("wrong password or username")
+            }
+         else{
+        
+          
+          if(!usersl.some(user => user.email === loginData.loginEmail)) {
+              // currently not logged in, so login
+              usersl.push(loginData);
+              localStorage.setItem('UsersLogin', JSON.stringify(usersl))
+              alert("logged in as  "+ loginData.loginname)
+              window.location.href="index.html"
+              const log = document.querySelector(".log")
+              log.innerHTML = "logout"
+        
+        
+           form.reset()
+            }
+          
+            else {
+         
+            }
+          
+         }}
+          else {
+        alert(" User not found ")
+          }
+        });

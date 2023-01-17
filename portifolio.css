@@ -76,7 +76,20 @@ span{
     grid-template-columns: repeat(auto-fit, minmax(350px, auto));
     grid-gap: 2rem;
     align-items: center;
-    margin-top: 4.4rem;
+    margin-top: 4rem;
+}
+.skills-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.skills-heading h4{
+    margin-top: 3px;
+    font-size: 2.5rem;
+    color: rgb(252, 183, 144);
+    font-weight: 700;
 }
 .row{
     background:white;

@@ -26,7 +26,7 @@ const createblogelement =({title}) =>{
  const  deletebtn   = document.createElement("button")
  blogs_div.setAttribute("class","blogdiv")
  font_div.setAttribute("class","fontas")
- publishbtn.innerText = "publish"
+ publishbtn.innerText = "Post"
  deletebtn.innerText = "delete"
 
  deletebtn.setAttribute("id","deleting")

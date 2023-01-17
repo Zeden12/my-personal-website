@@ -73,7 +73,7 @@ span{
 
 .wrapper{
     width: 370px;
-    height: 450px;
+    height: 460px;
     padding: 2rem 3rem;
     margin: 90px auto;
     margin-bottom: 10px;
@@ -107,7 +107,7 @@ form input{
     cursor: pointer;
     background: white;
 }
-.btn{
+.button1{
     padding: 10px 10px;
     background-color: transparent;
     border: 1px solid rgb(240, 117, 46);

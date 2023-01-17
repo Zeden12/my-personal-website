@@ -27,24 +27,23 @@
             <li><a href="/contact.html">contact</a></li>
             <li><a href="/Login.html">Login</a></li>
         </ul>
-    </header>
-    
+    </header> 
     <div class="wrapper">
-    <h1>LOGIN</h1> 
-    <form id="login-form">
-        <input type="email" id="username" placeholder="enter your email">
-        <input type="password" id="password" placeholder="enter your password">
-        <div id="forgot">
-            <p><a href="#">forgot password?</a></span></p>
-        </div>
-        <section id="butto">
-            <input type="submit" value="login" class="btn"> 
-        </section>
-    </form>
-
-    <div class="member">
-        if you don't have account<a href="/signup.html">signup</a>
-    </div>
+        <Form Class="Form-1">
+            <H1>Login</H1>
+            <Input Type="text" Name="Username" placeholder="Enter username" Id="Username" required/>
+            <Input Type="Email" Name="Email" placeholder="Enter your email" Id="Email"  required/>
+            <Input Type="Password" Name="Password" placeholder="Enter password" Id="Password"  required/>
+            <div id="forgot">
+                <p><a href="#">forgot password?</a></span></p>
+            </div>
+            <section id="butto">
+                <input type="submit" value="login" class="button1"> 
+            </section>
+            <div class="member">
+                if you don't have account<a href="/signup.html">signup</a>
+            </div>
+      </Form>
 </div>
     </div>
     <footer>
@@ -54,6 +53,30 @@
             </div>
         </div>
     </footer>
-    <script src="/javascript/login.js"></script>
+<script>
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar')
+
+menu.onclick = () => {
+  menu.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+};
+
+window.onscroll = () => {
+  menu.classList.remove('bx-b');
+  navbar.classList.remove('active');
+}
+
+const sr = ScrollReveal ({
+  distance: '60px',
+  duration: 2500,
+  reset: true
+})
+
+sr.reveal('.home-text',{delay:200, origin:'top'})
+sr.reveal('.home-img',{delay:400, origin:'top'})
+sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
+</script>
+<script src="/javascript/login.js"></script>
 </body>
 </html>

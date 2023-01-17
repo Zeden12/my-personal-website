@@ -30,24 +30,24 @@
     </header>
     
     <div class="wrapper">
-    <h1>Signup</h1> 
-    <form action="#">
-        <input type="text" placeholder="enter full name">
-        <input type="text" placeholder="enter your email">
-        <input type="password" placeholder="enter new password">
-        <input type="password" placeholder="confirm your password">
-    </form>
-    <div class="terms">
-        <input type="checkbox" id="checkbox">
-        <label for="checkbox">I agree to <a href="#">Terms & Conditions</a></label>
+        <Form Class="signup_form">
+            <H1>SIGNUP</H1>
+            <Input Type="text" Name="full_name" placeholder="Create User name" Id="full_name" required/>
+            <Input Type="Email" Name="Email" placeholder="enter your email" Id="Email" required />
+            <Input Type="Password" Name="Password" placeholder="enter new password" Id="Password" required/>
+            <Input Type="Password" Name="Comfirm_password" placeholder="confirm password" Id="Comfirm_Password" required />
+            <div class="terms">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">I agree to <a href="#">Terms & Conditions</a></label>
+            </div>
+            <section id="butto">
+                <button class="button1">Signup</button>
+            </section>
+            <div class="member">
+                Alreaddy have an account? <a href="/login.html">Login</a>
+            </div>
+          </Form>
     </div>
-    <section id="butto">
-        <button class="btn">Signup</button>
-    </section>
-    <div class="member">
-        Alreaddy have an account? <a href="/login.html">Login</a>
-    </div>
-</div>
 <footer>
     <div class="footer">
         <div class="classname">
@@ -56,5 +56,44 @@
     </div>
 </footer>
 <script src="/javascript/signup.js"></script>
+<script>
+  
+    const form = document.querySelector(".signup_form")
+    
+    const registerBtn = document.querySelector('.button1')
+    console.log(registerBtn)
+    
+    registerBtn.addEventListener('click', (event) => {
+     event.preventDefault()
+     confirm_password = document.getElementById('Comfirm_Password').value
+      var userData = {
+        user_name:document.getElementById('full_name').value,
+        email: document.getElementById('Email').value,
+        password: document.getElementById('Password').value
+    
+      };
+      var accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+      if(userData.password !== confirm_password){
+        alert("Oops passwords does  not match")
+      }
+      else{
+    
+        
+      if(!accounts.some(user => user.email === userData.email)){
+       accounts.push(userData);
+       localStorage.setItem('accounts', JSON.stringify(accounts));
+       location.reload()
+       console.log(userDaccountsata)
+      }
+      else {
+      alert(userData.email+" is alredy  registered create another..")
+      }
+     
+      }
+    
+    
+    })
+  
+  </script>
 </body>
 </html>

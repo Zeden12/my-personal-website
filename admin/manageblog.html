@@ -11,7 +11,7 @@
 <body>
     <nav>
         <div class="logo">
-            <h1><b><a href="/homepage.html">ZEDArt</a></b></h1>
+            <h1><b><a href="/index.html">ZEDArt</a></b></h1>
         </div>
         <ul>
             <li><a class="btn" href="/homepage.html">Logout</a></li>
@@ -34,25 +34,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/users/index.html">
+                    <a href="/admin/manageusers.html">
                         <i class="fa-solid fa-user-graduate"></i>
                         <span class="nav-item">Users</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/Blogs/index.html">
+                    <a href="/admin/manageblog.html">
                         <i class="fa-solid fa-briefcase"></i>
                         <span class="nav-item">Blogs</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/Inbox/index.html">
+                    <a href="/admin/inbox.html">
                         <i class="fa-solid fa-bell"></i>
                         <span class="nav-item">inbox</span>
                     </a>
                 </li>
                 <li>
-                    <a href="homepage.html" class="logout">
+                    <a href="/index.html" class="logout">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="nav-item">logout</span>
                     </a>
@@ -66,7 +66,7 @@
                     <a href="create.html"><button class="search"> Create Blogs in this form</button></a>
                 </p>
                 <div>
-                    <input type="text" placeholder="Find Artical.." class="input-search">
+                    <input type="text" placeholder="Find Blog.." class="input-search">
                     <button class="search">search</button>
                 </div>
             </div>
@@ -76,15 +76,13 @@
         <main class = "main">  
         
             <form class = form>
-              <label>Blog Title:</label>
-              <input type="text"  class ="blog-title" name="title" id="title">
+              <input type="text" placeholder="Create blog Tittle"  class ="blog-title" name="title" id="title">
               <br>
               
-              <label>Blog Message:</label>
-              <textarea name="message"  class ="blog-story" id="message"></textarea>
+              <textarea name="message" placeholder="enter Blog Message"  class ="blog-story" id="message"></textarea>
               <br>
 
-              <label>Blog Image:</label>
+              <label>Insert Picture</label>
               <input type="file" class ="file" name="image" id="image">
               <br>
 

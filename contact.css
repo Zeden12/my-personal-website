@@ -65,11 +65,52 @@ span{
 }
 section{
     padding: 124px 14%;
-}.contact-form{
+}
+.contact{
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 6rem;
+}
+.center h2{
+    color: black;
+    margin-right: 100px;
+
+}
+.center h4{
+    color: rgb(71, 70, 70);
+    margin-right: 100px;
+    margin-top: 1.5rem;
+
+}
+
+.social-icons{
+    list-style: none;
+    text-align: center;
+    margin: 20px 0px;
+    margin-right: 125px;
+    margin-top: 3rem;
+}
+.social-icons li{
+    display: inline-block;
+}
+.social-icons li i{
+    background:  rgb(240, 117, 46);
+    color: black;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.social-icons li i:hover{
+    background: black;
+    color: blue;
+}
+.contact-form{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4.2rem;
+    margin-top: 5.2rem;
 }
 .contact-form form{
     position: relative;
@@ -100,8 +141,8 @@ form .send-btn{
     background: var(--main-color);
     color: var(--text-color);
     box-shadow: 4px 4px var(--text-color);
-    padding: 0 25px;
-    line-height: 42px;
+    padding: 0 2px;
+    line-height: 22px;
     display: inline-block;
     border: 1px solid transparent;
     font-size: 14px;
@@ -109,6 +150,12 @@ form .send-btn{
     letter-spacing: 2px;
     transition: ease all 0.3s;
     cursor: pointer;
+    list-style: none;
+    padding: 10px 35px;
+    border-radius: 15px;
+    color: black;
+    outline: none;
+    transition: .6s ease;
 }
 form .send-btn:hover{
     background: var(--text-color);

@@ -70,12 +70,24 @@ span{
     cursor: pointer;
     display: none;
 }
+.skills-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+.skills-heading h4{
+    margin-top: 3px;
+    font-size: 2.5rem;
+    color: rgb(252, 183, 144);
+    font-weight: 700;
+}
 
 .container {
     max-width: 80%;
-    margin: 0 auto;
-    height: 100%;
-    
+    margin: 20px auto;
+    height: 80%;
 }
 
 .grid {
