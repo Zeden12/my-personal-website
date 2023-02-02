@@ -1,27 +1,3 @@
-// //for navigation bar
-// let menu = document.querySelector('#menu-icon');
-// let navbar = document.querySelector('.navbar')
-
-// menu.onclick = () => {
-//   menu.classList.toggle('bx-x');
-//   navbar.classList.toggle('active');
-// };
-
-// window.onscroll = () => {
-//   menu.classList.remove('bx-b');
-//   navbar.classList.remove('active');
-// }
-
-// const sr = ScrollReveal ({
-//   distance: '60px',
-//   duration: 2500,
-//   reset: true
-// })
-
-// sr.reveal('.home-text',{delay:200, origin:'top'})
-// sr.reveal('.home-img',{delay:400, origin:'top'})
-// sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
-
 const readmore = document.querySelectorAll('.read_more')
     
     function reveal(parent){
@@ -39,56 +15,66 @@ const readmore = document.querySelectorAll('.read_more')
  
 //readmore1.addEventListener("click",reveal)
 
+const display_blogs = async() =>{
+  const blogs_container = document.getElementById("blog-container");
+  if(blogs_container){
+    const response = await fetch('http://localhost:5700/blogs/', {
+      method: "GET"
+    });
+    const blogs = await response.json();
+    blogs.forEach((data) =>{
+      blogs_container.innerHTML += `<div class="card">
+            
+      <div class="card_img">
+          <img src="/assets/sport.blog.jpeg" alt="">
+      </div>
+      <div class="card_body">
+      <p class="date">${data.date}</p>
+          <h2 class="card_title"  id ="card_title3">${data.title}</h2>
+          <p id = "card_story3">${data.body}</p>
+          <p class ="revealmore"></p>
+          <a href="blog2.html?id=${data._id}" class="read_more">Read More</a>
+        
+      </div>
+      </div> `
+    })
+  }
+}
 
+display_blogs()
 
-const blogs = JSON.parse(localStorage.getItem("blogs")) ||[]
+const display_1_blogs = async() =>{
+  const singleblog = document.getElementById("singleblog");
+  if(singleblog){
+    let blog_id = location.href.split("=")[1];
+    const response = await fetch(`http://localhost:5700/blogs/${blog_id}`, {
+      method: "GET"
+    });
+    const blogs = await response.json();
+    
+      singleblog.innerHTML = `<div class="oneblog">
+            
+      <div class="card_img">
+          <img src="/assets/sport.blog.jpeg" alt="">
+      </div>
+      <h1>${blogs.title}</h1>
+      <p>${blogs.body}</p>
+      </div> `
+
+  }
+}
+
+display_1_blogs()
 //for card 1
 
 const card_title1 = document.getElementById("card_title1");
 const card_story1 = document.getElementById("card_story1"); 
 
-let blog1 = blogs[0]  
-console.log(blog1)
-card_title1.innerHTML= blog1.title
-card_story1.innerHTML = blog1.message
+// let blog1 = blogs[0]  
+// console.log(blog1)
+// card_title1.innerHTML= blog1.title
+// card_story1.innerHTML = blog1.message
 
 
-const card_title2 = document.getElementById("card_title2");
-const card_story2 = document.getElementById("card_story2"); 
 
-let blog2 = blogs[1]  
 
-card_title2.innerHTML= blog2.title
-card_story2.innerHTML = blog2.message
-
-const card_title3 = document.getElementById("card_title3");
-const card_story3= document.getElementById("card_story3"); 
-
-let blog3 = blogs[2]  
-
-card_title3.innerHTML= blog3.title
-card_story3.innerHTML = blog3.message
-
-const card_title4 = document.getElementById("card_title4");
-const card_story4= document.getElementById("card_story4"); 
-
-let blog4 = blogs[3]  
-
-card_title4.innerHTML= blog4.title
-card_story4.innerHTML = blog4.message
-
-const card_title5 = document.getElementById("card_title5");
-const card_story5= document.getElementById("card_story5"); 
-
-let blog5 = blogs[4]  
-
-card_title5.innerHTML= blog5.title
-card_story5.innerHTML = blog5.message
-
-const card_title6 = document.getElementById("card_title6");
-const card_story6= document.getElementById("card_story6"); 
-
-let blog6 = blogs[5]  
-
-card_title6.innerHTML= blog6.title
-card_story6.innerHTML = blog6.message

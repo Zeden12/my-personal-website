@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portifolio website</title>
-    <link rel="stylesheet" type="text/css" href="/contact.css">
+    <link rel="stylesheet" type="text/css" href="./contact.css">
     
     <link rel="stylesheet"
     href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
@@ -36,41 +36,45 @@
   <section class="contact" id="form">
 
     <div class="contact-form">
-        <div class="center">
-            <h2>CONTACT US HERE!</h2>
-            <h4>Fill up the form and our team <br> will get back to you within 24hours! <br>
-                I will be happy to share ideas <br> with you, so don't miss to share <br> what's on your mind!
-            </h4>
-            <ul class="social-icons">
-                <li>
-                    <a href="https://www.facebook.com/kwizera.cjernez">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/ErnestHaguma?t=8UAKzm-53sxVfAjOGGb6Bg&s=09">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/kwizera-haguma-ernest-709195241">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/invites/contact/?i=148754zt98se7&utm_content=k8m0fib">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
+        <div class="grid">
+            <div class="center">
+                <h2>CONTACT US HERE!</h2>
+                <h4>Fill up the form and our team <br> will get back to you within 24hours! <br>
+                    I will be happy to share ideas <br> with you, so don't miss to share <br> what's on your mind!
+                </h4>
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.facebook.com/kwizera.cjernez">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/ErnestHaguma?t=8UAKzm-53sxVfAjOGGb6Bg&s=09">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/kwizera-haguma-ernest-709195241">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/invites/contact/?i=148754zt98se7&utm_content=k8m0fib">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
             
+            </div>
+            <div class="card">
+                <form action="">
+                    <input type="text" id="name" placeholder="Your Full Name" required>
+                    <input type="temail" id="email" placeholder="Your Email Address" required>
+                    <textarea name="" id="" cols="30" rows="10" id="message" placeholder="Type your message" required></textarea>
+                    <input type="submit" name="" value="send" class="send-btn" onclick="submitForm()">
+                </form>
+            </div>
         </div>
-        <form action="">
-            <input type="text" id="name" placeholder="Your Full Name" required>
-            <input type="temail" id="email" placeholder="Your Email Address" required>
-            <textarea name="" id="" cols="30" rows="10" id="message" placeholder="Type your message" required></textarea>
-            <input type="submit" name="" value="send" class="send-btn" onclick="submitForm()">
-        </form>
     </div>
  </section>
    <footer>

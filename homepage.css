@@ -33,8 +33,9 @@ body{
 header{
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 0.1rem;
     right: 0;
+    bottom: 88vh;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -86,7 +87,8 @@ section{
 .home-img img{
     max-width: 100%;
     width: 370px;
-    height: 80vh;
+    height: 75vh;
+    bottom: 20px;
 }
 .home-text h5{
     color: var(--text-color);
@@ -142,6 +144,28 @@ section{
     color: var(--main-color);
     box-shadow: 4px 4px var(--main-color);
 }
+
+.cta{
+    background: rgb(186, 181, 181);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin: 10px auto;
+    margin-bottom: 100px;
+}
+.cta h4{
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.cta h2{
+    color: var(--main-color);
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
 .footer{ 
     position: fixed;
     left: 0px;
@@ -181,7 +205,7 @@ section{
         --p-font: 0.9rem;
     }
     .home{
-        height: 80vh;
+        height: 110hv;
     }
 }
 
@@ -235,7 +259,7 @@ section{
         --p-font: 0.9rem;
     }
     .home{
-        height: 70vh;
+        height: 100hv;
     }
 }
 

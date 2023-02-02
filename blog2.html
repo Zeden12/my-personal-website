@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My portifolio website</title>
-        <link rel="stylesheet" type="text/css" href="/homepage.css">
+        <link rel="stylesheet" type="text/css" href="/blog2.css">
         
         <link rel="stylesheet"
         href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
@@ -16,7 +16,7 @@
     </head>
 <body>
     <header>
-        <a href="/admin/inbox.html" class="logo">ZED<span>Art</span></a>
+        <a href="#" class="logo">ZED<span>Art</span></a>
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <ul class="navbar">
@@ -28,38 +28,33 @@
             <li><a href="/Login.html">Login</a></li>
         </ul>
     </header>
-    <section class="home" id="home">
-        <div class="home-text">
-            <h5>Hello, I am</h5>
-            <h1>Ernest HAGUMA KWIZERA</h1>
-            <h6>Welcome To ZED<span>Art</span></h6>
-            <p>I develope services for customers According To What you want, While specializing in creating Front-End Designs,
-                Online services like Delivery, Applications and both Art & Design.
-            </p>
-            <a href="/javascript/cv.html" class="btn" download="">Download CV</a>
-        </div>
-        <div class="home-img">
-            <img src="/assets/zeden.png.png" alt="">
-        </div>
-        
-    </section>
 
-    <footer>
-        <div class="footer">
-            <div class="classname">
-            @coppyright 2022 - ZEDArt    <a href="./contact me.html">kwizeraernez@gmail.com</a><br><span>+250781963232</span>
-            </div>
+    <div class="skills-heading">
+        <h4></h4>
+    </div>
+
+    <div id="singleblog">
+
+    </div>
+
+    <div id="comment-form">
+        <form>
+          <textarea id="comment-text" placeholder="Write your comment here"></textarea>
+          <button type="submit" id="submit-button">Submit</button>
+        </form>
+        <div id="comments-display"></div>
+    </div>
+   
+   </main>
+ <footer>
+    <div class="footer">
+        <div class="classname">
+        @coppyright 2022 - ZEDArt    <a href="./contact me.html">kwizeraernez@gmail.com</a><br><span>+250781963232</span>
         </div>
-        </footer>
-
-    <!--cta-->
-    <section class="cta">
-        <h4>have Any project in your mind</h4>
-        <h2>Dont shy just talk to Zed</h2>
-        <a href="/contact.html" class="btn">Hire Me</a>
-    </section>
-
-<script>
+    </div>
+ </footer>
+ <script>
+    //for navigation bar
 let menu = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar')
 
@@ -82,8 +77,14 @@ const sr = ScrollReveal ({
 sr.reveal('.home-text',{delay:200, origin:'top'})
 sr.reveal('.home-img',{delay:400, origin:'top'})
 sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
-</script>
 
-
+document.getElementById('submit-button').addEventListener('click', function (event) {
+  event.preventDefault();
+  const commentText = document.getElementById('comment-text').value;
+  const commentsDisplay = document.getElementById('comments-display');
+  commentsDisplay.innerHTML += `<p>${commentText}</p>`;
+});
+ </script>
+ <script src="/javascript/blog.js"></script>
 </body>
 </html>

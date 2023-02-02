@@ -26,14 +26,15 @@ body{
 header{
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 0.1rem;
     right: 0;
+    bottom: 88vh;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    padding: 24px 14px;
+    padding: 24px 14%;
     transform: .3s;
 }
 .logo{
@@ -67,17 +68,23 @@ section{
     padding: 124px 14%;
 }
 .contact{
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 6rem;
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 .center h2{
+    font-size: 29px;
     color: black;
     margin-right: 100px;
 
 }
 .center h4{
+    font-size: 22px;
     color: rgb(71, 70, 70);
-    margin-right: 100px;
+    margin-right: 10px;
     margin-top: 1.5rem;
 
 }
@@ -95,7 +102,7 @@ section{
 .social-icons li i{
     background:  rgb(240, 117, 46);
     color: black;
-    padding: 15px;
+    padding: 17px;
     font-size: 20px;
     border-radius: 20px;
     margin: 0px 5px;
@@ -110,8 +117,23 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5.2rem;
+    margin-top: 2.2rem;
 }
+
+.grid {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card {
+    border: 1px solid rgb(245, 178, 122);
+    box-shadow: 0 2px 2px rgb(251, 160, 85);
+}
+
 .contact-form form{
     position: relative;
     width: 550px;
@@ -200,8 +222,8 @@ form .send-btn:hover{
         --h3-font: 1.2rem;
         --p-font: 0.9rem;
     }
-    .home{
-        height: 80vh;
+    .contact-form{
+        height: 100%;
     }
 }
 
@@ -236,29 +258,29 @@ form .send-btn:hover{
 }
 
 @media (max-width: 795px){
-    .home{
+    .grid{
         grid-template-columns: 1fr;
         grid-gap: 2rem;
         text-align: center;
         margin-top: 70px;
         height: 100vh;
     }
-    .home-text p{
+    .center h1 h2{
         max-width: 100%;
     }
-    .home-img img{
+    form{
         max-width: 100%;
         width: 490px;
         height: auto;
     }
-    .about{
+    .contact{
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .about-text h2{
+    .center h2{
     max-width: 100%;
     }
-    .about-text p{
+    .center h1{
     max-width: 100%;
     }
     .about-img{
