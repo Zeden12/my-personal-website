@@ -84,12 +84,18 @@ span{
     font-weight: 700;
 }
 
+.container {
+    max-width: 80%;
+    margin: 20px auto;
+    height: 80%;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    margin: 50px auto;
-    box-shadow: 2px 2px 5px #ccc;
+    margin: 30px auto;
+    box-shadow: 2px 2px 5px rgb(251, 154, 102);
 }
 
 
@@ -143,15 +149,34 @@ p.card_author a:hover {
     font-weight: bold;
 }
 
-a.read_more {
-
+.button{
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding: 5px 0px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    width: 95%;
+    color: black;
+    cursor: pointer;
+    background: white;
 }
-
-a.read_more:hover {
-  cursor: pointer;
-  background-color:  rgb(240, 117, 46);
-  color: black;
-  font-weight: bold;
+a.read_more {
+    padding: 3px 25px;
+    background-color: transparent;
+    border: 1px solid rgb(242, 176, 137);
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    transition: .6s ease;
+    box-sizing: border-box;
+}
+a.read_more:hover{
+    cursor: pointer;
+    background-color:  rgb(249, 152, 97);
+    color: black;
+    box-shadow: 0 0 2px  rgb(246, 152, 98), 0 0 2px  rgb(250, 158, 105);
+    font-weight: bold;
 }
 
 .link {
@@ -202,7 +227,7 @@ a.read_more:hover {
   left: 0px;
   bottom: 0px;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color:  rgb(240, 117, 46);
   color: black;
   text-align: center;

@@ -30,11 +30,13 @@ const display_blogs = async() =>{
       </div>
       <div class="card_body">
       <p class="date">${data.date}</p>
+      <p class="card_author"><a href="https://www.linkedin.com/in/kwizera-haguma-ernest-709195241">${data.author}</a></p>
           <h2 class="card_title"  id ="card_title3">${data.title}</h2>
           <p id = "card_story3">${data.body}</p>
           <p class ="revealmore"></p>
+          <div class="button">
           <a href="blog2.html?id=${data._id}" class="read_more">Read More</a>
-        
+        </div>
       </div>
       </div> `
     })
