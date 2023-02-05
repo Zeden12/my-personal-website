@@ -1,41 +1,41 @@
-// Get form elements
-const form = document.querySelector('form');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
+// // Get form elements
+// const form = document.querySelector('form');
+// const nameInput = document.getElementById('name');
+// const emailInput = document.getElementById('email');
+// const messageInput = document.getElementById('message');
 
-// Check if messages already exist in local storage
-let messages = JSON.parse(localStorage.getItem('messages')) || [];
+// // Check if messages already exist in local storage
+// let messages = JSON.parse(localStorage.getItem('messages')) || [];
 
-// Add event listener to form submit
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+// // Add event listener to form submit
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
 
-  alert("message sent! thank you for chat with us..!")
+//   alert("message sent! thank you for chat with us..!")
 
-  // Get form data
-  const name = nameInput.value;
-  const email = emailInput.value;
-  const message = messageInput.value;
+//   // Get form data
+//   const name = nameInput.value;
+//   const email = emailInput.value;
+//   const message = messageInput.value;
 
-  // Create new message object
-  const newMessage = {
-    name,
-    email,
-    message,
-  };
+//   // Create new message object
+//   const newMessage = {
+//     name,
+//     email,
+//     message,
+//   };
 
-  // Add new message to array
-  messages.push(newMessage);
+//   // Add new message to array
+//   messages.push(newMessage);
 
-  // Save messages to local storage
-  localStorage.setItem('messages', JSON.stringify(messages));
+//   // Save messages to local storage
+//   localStorage.setItem('messages', JSON.stringify(messages));
 
-  // Clear form fields
-  nameInput.value = '';
-  emailInput.value = '';
-  messageInput.value = '';
-});
+//   // Clear form fields
+//   nameInput.value = '';
+//   emailInput.value = '';
+//   messageInput.value = '';
+// });
 
   
 // const sendbtn = document.querySelector('.button');

@@ -87,28 +87,35 @@
     </footer>
 
     <script>
-        let menu = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('.navbar');
-        
-        menu.onclick = () => {
-          menu.classList.toggle('bx-x');
-          navbar.classList.toggle('active');
-        };
-        
-        window.onscroll = () => {
-          menu.classList.remove('bx-b');
-          navbar.classList.remove('active');
-        }
-        
-        const sr = ScrollReveal ({
-          distance: '60px',
-          duration: 2500,
-          reset: true
-        })
-        
-        sr.reveal('.home-text',{delay:200, origin:'top'})
-        sr.reveal('.home-img',{delay:400, origin:'top'})
-        sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
+           const submit = document.querySelector('.button1')
+    submit.addEventListener('click', (event) => {
+    event.preventDefault()
+     var messageData = {
+    username:document.getElementById('Username').value,
+    email: document.getElementById('Email').value,
+    idea: document.getElementById('message').value
+  };
+const  newData ={
+    method:'POST',
+    headers:{
+      'Content-Type':"application/json"
+    },
+    body: JSON.stringify(messageData)
+  }
+ // console.log(newData)
+fetch("http://localhost:5700/users/login",newData)
+.then( async (n)=>{
+  const res =  await n.json()
+  console.log(res)
+  let k = res.token
+  if(n.status == 200){
+  alert('message sent successfull')
+  localStorage.setItem('token',res.token)
+  }
+}).catch(error=>{
+  console.log(error)
+})
+    })
     </script>
 
     <script src="/javascript/contact.js"></script>

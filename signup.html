@@ -57,43 +57,37 @@
 </footer>
 <script src="/javascript/signup.js"></script>
 <script>
-  
-    const form = document.querySelector(".signup_form")
-    
-    const registerBtn = document.querySelector('.button1')
-    console.log(registerBtn)
-    
-    registerBtn.addEventListener('click', (event) => {
-     event.preventDefault()
-     confirm_password = document.getElementById('Comfirm_Password').value
-      var userData = {
-        user_name:document.getElementById('full_name').value,
-        email: document.getElementById('Email').value,
-        password: document.getElementById('Password').value
-    
-      };
-      var accounts = JSON.parse(localStorage.getItem('accounts')) || [];
-      if(userData.password !== confirm_password){
-        alert("Oops passwords does  not match")
-      }
-      else{
-    
-        
-      if(!accounts.some(user => user.email === userData.email)){
-       accounts.push(userData);
-       localStorage.setItem('accounts', JSON.stringify(accounts));
-       location.reload()
-       console.log(userDaccountsata)
-      }
-      else {
-      alert(userData.email+" is alredy  registered create another..")
-      }
-     
-      }
-    
-    
-    })
-  
-  </script>
+const Signup = document.querySelector('.button1')
+Signup.addEventListener('click', (event) => {
+ event.preventDefault()
+ confirm_password= document.getElementById('Comfirm_Password').value
+  var userData = {
+    username:document.getElementById('full_name').value,
+    email: document.getElementById('Email').value,
+    password: document.getElementById('Password').value
+  };
+  const  newData ={
+    method:'POST',
+    headers:{
+      'Content-Type':"application/json"
+    },
+    body: JSON.stringify(userData)
+  }
+  console.log(newData)
+fetch("http://localhost:5700/users",newData)
+.then((n)=>{
+  const res = n.json()
+  console.log(res)
+  console.log(n)
+  if(n.status == 201){
+   alert("registrtaion successfull")
+   location.reload()
+   window.location.href="login.html"
+  }
+}).catch(error=>{
+  console.log(error)
+})
+})
+</script>
 </body>
 </html>
