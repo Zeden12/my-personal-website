@@ -161,10 +161,10 @@ td button:nth-child(2){
     outline: none;
     border: 1px solid rgba(255, 133, 33, 1);
     border-radius: 6px;
-    color:rgba(255, 133, 33, 1)cf;
+    color:rgb(9, 9, 9)cf;
 }
 ::placeholder{
-    color: rgba(255, 133, 33, 1);
+    color: rgb(6, 6, 6);
 }
 .table_section{
     padding-left: 7%;

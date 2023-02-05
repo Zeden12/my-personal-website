@@ -1,15 +1,17 @@
 const blogs_container= document.querySelector(".blogscreated")
   const sendbtn = document.querySelector('.submit');
   const formdata = document.querySelector(".form")
-  const title_input = formdata["title"]
+  const title_input = document.getElementById('title')
+  const author_input = formdata["author"]
   const message_input = formdata["message"]
+  const image_input = formdata["image"]
 
   const blogs = JSON.parse(localStorage.getItem("blogs")) || []
 
   const addblog = ( title, message) => {
   blogs.push({
    title,
-   message
+   body
 });
 localStorage.setItem("blogs",JSON.stringify(blogs))
 return {title,message};
@@ -46,15 +48,41 @@ font_div.append(publishbtn,deletebtn)
 blogs.forEach(createblogelement);
 formdata.onsubmit = (e) =>{
    e.preventDefault();
+   const titleValue = title_input.value;
+   const authorValue = author_input.value; 
+   const messageValue = message_input.value;
+   const imageValue = image_input.files
 
-   const newBlog = addblog(
-   title_input.value,
-   message_input.value
-   
-   )
-   createblogelement(newBlog)
-   title_input.value = ""
-   message_input.value= ""
+   const newBlog = ()=>{
+    // console.log("loaded")
+    try {
+      const reader = new FileReader();
+      reader.addEventListener('load', async()=>{
+        const response = await fetch('https://zedart-api.onrender.com/blogs',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          title: titleValue,
+          author: authorValue,
+          image: reader.result,
+          body: messageValue
+        })
+        })
+        console.log(titleValue, authorValue, messageValue)
+        const blog =  await response.json(); 
+        if(blog.title == titleValue){
+          alert("blog created")
+        }
+        else(console.log(blog))  
+      })
+      reader.readAsDataURL(imageValue[0]);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  //  createblogelement(newBlog)
+  newBlog()
+  
 }
 
 deletebtn = document.querySelector(".deletebtn")
