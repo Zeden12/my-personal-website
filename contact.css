@@ -144,6 +144,7 @@ section{
 }
 
 .contact-form form{
+    background-color: #f4f4f4;
     border-radius: 5px;
     position: relative;
     width: 550px;
@@ -275,6 +276,13 @@ form .send-btn:hover{
         text-align: center;
         margin-top: 80px;
         height: 100vh;
+    }
+    .contact-form form{
+        background-color: #f4f4f4;
+        padding:10px 10px;
+        border-radius: 5px;
+        margin: 0 auto;
+        width: auto;
     }
     .home-text p{
         max-width: 100%;

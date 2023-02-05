@@ -21,11 +21,16 @@ nav{
 }
 nav .logo a{
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 600;
     float: left;
-    color: rgba(255, 133, 33, 1);
+    color: black;
     letter-spacing: 0.5px;
     cursor: pointer;
+    margin-top: 1rem;
+}
+
+nav .logo a span{
+    color: rgb(240, 117, 46);
 }
 
 nav ul{
@@ -53,13 +58,14 @@ nav li a:hover{
 }
 .btn {
     display: inline-block;
-    color: rgb(145, 209, 25);
+    color: rgb(240, 117, 46);
     font-weight: bold;
     font-size: 20px;
     background: #000000;
     border: none;
     border-radius: 5px;
-    padding: 12px 16px;
+    padding: 5px 16px;
+    margin-top: 1rem;
     cursor: pointer;
     border: 2px solid #000000;
 }

@@ -243,4 +243,11 @@ input:focus{
         width: 490px;
         height: auto;
     }
+    .wrapper{
+        padding:5px 5px;
+        border-radius: 5px;
+        margin: 20% 20%;
+        height: auto;
+        width: auto;
+    }
 }
