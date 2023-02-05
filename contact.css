@@ -101,7 +101,7 @@ section{
     list-style: none;
     text-align: center;
     align-items: center;
-    margin: 15px 0px;
+    margin: 10px 0px;
     margin-right: 100px;
     margin-top: 3rem;
 }
@@ -111,8 +111,8 @@ section{
 .social-icons li i{
     background:  rgb(240, 117, 46);
     color: black;
-    padding: 17px;
-    font-size: 15px;
+    padding: 10px;
+    font-size: 20px;
     border-radius: 20px;
     margin: 0px 5px;
     cursor: pointer;
@@ -145,7 +145,7 @@ section{
 
 .contact-form form{
     background-color: #f4f4f4;
-    border-radius: 5px;
+    border-radius: 15px;
     position: relative;
     width: 550px;
     box-shadow: 1px 2px 2px rgba(255, 133, 33, 1);
