@@ -71,7 +71,7 @@
                 <form action="">
                     <input type="text" id="name" placeholder="Your Full Name" required>
                     <input type="temail" id="email" placeholder="Your Email Address" required>
-                    <textarea name="" id="" cols="30" rows="10" id="message" placeholder="Type your message" required></textarea>
+                    <textarea name="" cols="30" rows="10" id="message" placeholder="Type your message" required></textarea>
                     <input type="submit" id="submit" name="" value="send" class="send-btn">
                 </form>
             </div>
@@ -108,7 +108,7 @@ fetch("http://localhost:5700/messages",newData)
   const res = n.json()
   console.log(res)
   console.log(n)
-  if(n.status == 201){
+  if(n.status == 200){
    alert("message sent successfull")
    location.reload()
    window.location.href="contact.html"

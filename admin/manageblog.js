@@ -71,7 +71,7 @@ formdata.onsubmit = (e) =>{
         console.log(titleValue, authorValue, messageValue)
         const blog =  await response.json(); 
         if(blog.title == titleValue){
-          alert("blog created")
+          alert("blog created!!")
         }
         else(console.log(blog))  
       })

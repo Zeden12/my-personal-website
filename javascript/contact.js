@@ -1,69 +1,48 @@
-// // Get form elements
-// const form = document.querySelector('form');
-// const nameInput = document.getElementById('name');
-// const emailInput = document.getElementById('email');
-// const messageInput = document.getElementById('message');
+const displayMessages = async()=> {
+    const tbody = document.getElementById('message_body');
+const response = await fetch('https://zedart-api.onrender.com/messages', {
+method: "GET"
+});
+const messages = await response.json();
 
-// // Check if messages already exist in local storage
-// let messages = JSON.parse(localStorage.getItem('messages')) || [];
+let no = 1;
+messages.forEach((data) => {
+                id = JSON.stringify(data._id);
+                tbody.innerHTML += `
+                <tr>
+                    <td>${no++}</td>
+                    <td>${data.username}</td>
+                    <td>${data.email}</td>
+                    <td>${data.idea}</td>
+                    <td class="pedding">
+                        <a href="#" onclick = 'messageDelete(${id})'>delete</a>
+                    </td>
+                </tr>
+                `;
+            });
 
-// // Add event listener to form submit
-// form.addEventListener('submit', (e) => {
-//   e.preventDefault();
 
-//   alert("message sent! thank you for chat with us..!")
+}
 
-//   // Get form data
-//   const name = nameInput.value;
-//   const email = emailInput.value;
-//   const message = messageInput.value;
+displayMessages();
 
-//   // Create new message object
-//   const newMessage = {
-//     name,
-//     email,
-//     message,
-//   };
+async function messageDelete(id){
+    try {
+        const response = await fetch(`https://zedart-api.onrender.com/messages/${id}`,{
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+        })
+        console.log(response)
+        const del = await response.json();
+        if (response.status == 200){
+            alert("Message deleted successfully!");
+            location.reload()
+        }
+        else(console.log(del))
+    } catch (error) {
+        console.log(error)
+    }
+    
+}
 
-//   // Add new message to array
-//   messages.push(newMessage);
-
-//   // Save messages to local storage
-//   localStorage.setItem('messages', JSON.stringify(messages));
-
-//   // Clear form fields
-//   nameInput.value = '';
-//   emailInput.value = '';
-//   messageInput.value = '';
-// });
-
-  
-// const sendbtn = document.querySelector('.button');
-
-// let  messages = localStorage.getItem("messages")
-// if( messages == null){
-//   messages =[]
-// }
-// else{
-//   messages = JSON.parse(messages)
-//  }
-// sendbtn.addEventListener('click', (event) => {
- 
-//  event.preventDefault();
-
-//  const email = document.querySelector('#email').value;
-//  const name = document.querySelector('#name').value;
-//  const issue = document.querySelector('#message').value;
-
-//  var message = {
-//    email,name,message
-//  }
-//   messages.push(message)
-// localStorage.setItem("messages",JSON.stringify(messages)),
- 
-//  message.clear()
-//  name.clear()
-//  email.clear()
-
-// });
 
