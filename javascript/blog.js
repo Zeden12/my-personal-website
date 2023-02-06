@@ -18,7 +18,7 @@ const readmore = document.querySelectorAll('.read_more')
 const display_blogs = async() =>{
   const blogs_container = document.getElementById("blog-container");
   if(blogs_container){
-    const response = await fetch('https://zedart-api.onrender.com/blogs', {
+    const response = await fetch('https://zedart-api.onrender.com/blogs/', {
       method: "GET"
     });
     const blogs = await response.json();
@@ -67,7 +67,7 @@ const display_1_blogs = async() =>{
             
       <div class="card_img">
         <img src="${blogs.image.url}" alt="">
-      </div>
+      </div><br>
       <h1>${blogs.title}</h1><br>
       <p>${blogs.body}</p>
       </div> `

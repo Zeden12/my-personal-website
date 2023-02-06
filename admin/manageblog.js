@@ -58,7 +58,7 @@ formdata.onsubmit = (e) =>{
     try {
       const reader = new FileReader();
       reader.addEventListener('load', async()=>{
-        const response = await fetch('https://zedart-api.onrender.com/blogs',{
+        const response = await fetch('http://localhost:5700/blogs',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
