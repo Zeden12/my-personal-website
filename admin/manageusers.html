@@ -91,6 +91,62 @@
             </div>
         </div>
     </section>
-    <script src="dashboard.js"></script>
+    <script>
+const users_received = document.querySelector(".users_received")
+function users() {
+  var token = localStorage.getItem('token')
+  const  getallusers ={
+    method:'GET',
+    headers:{
+      'Content-Type':"application/json",
+      "authorization":`Bearer ${token}`
+    }
+  }
+ // console.log(newData)
+ console.log(getallusers.headers)
+fetch("https://zedart-api.onrender.com/users",getallusers)
+.then( async (n)=>{
+  const res =  await n.json()
+  let allusers = res
+  console.log(allusers)
+  allusers.forEach(res =>{
+    const title = document.createElement('p');
+    title.innerText =res.email
+    const fonta_div = document.createElement('div')
+    const article = document.createElement('article')
+    const all_container = document.createElement('section')
+    fonta_div.setAttribute("class","fonta-div")
+    const deletebtn = document.createElement('button')
+    const publish = document.createElement('button')
+// fonta_div.append(publish)
+fonta_div.append(deletebtn)
+deletebtn.innerText='delete'
+publish.innerText='update'
+article.append(title)
+all_container .append(article,fonta_div)
+users_received.append(all_container)
+// Append the div elements to the container
+id = res._id
+console.log(id)
+deletebtn.addEventListener("click", async(e)=>{
+e.preventDefault()
+const  deletedata ={
+    method:'DELETE',
+    headers:{
+      'Content-Type':"application/json",
+      "authorization":`Bearer ${token}`
+    }
+  }
+  console.log(id)
+   await fetch(`https://zedart-api.onrender.com/users/${id}`,deletedata).then(()=>{
+    window.location.reload()
+    alert('message succussfully deleted')
+  })
+})
+  })
+})}
+users()
+    </script>
+    
 </body>
 </html>

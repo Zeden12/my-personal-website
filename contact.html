@@ -72,7 +72,7 @@
                     <input type="text" id="name" placeholder="Your Full Name" required>
                     <input type="temail" id="email" placeholder="Your Email Address" required>
                     <textarea name="" id="" cols="30" rows="10" id="message" placeholder="Type your message" required></textarea>
-                    <input type="submit" name="" value="send" class="send-btn" onclick="submitForm()">
+                    <input type="submit" id="submit" name="" value="send" class="send-btn">
                 </form>
             </div>
         </div>
@@ -87,35 +87,36 @@
     </footer>
 
     <script>
-           const submit = document.querySelector('.button1')
-    submit.addEventListener('click', (event) => {
-    event.preventDefault()
-     var messageData = {
-    username:document.getElementById('Username').value,
-    email: document.getElementById('Email').value,
+const send = document.querySelector('.send-btn')
+send.addEventListener('click', (event) => {
+ event.preventDefault()
+  var userData = {
+    username:document.getElementById('name').value,
+    email: document.getElementById('email').value,
     idea: document.getElementById('message').value
   };
-const  newData ={
+  const  newData ={
     method:'POST',
     headers:{
       'Content-Type':"application/json"
     },
-    body: JSON.stringify(messageData)
+    body: JSON.stringify(userData)
   }
- // console.log(newData)
-fetch("http://localhost:5700/users/login",newData)
-.then( async (n)=>{
-  const res =  await n.json()
+  console.log(newData)
+fetch("http://localhost:5700/messages",newData)
+.then((n)=>{
+  const res = n.json()
   console.log(res)
-  let k = res.token
-  if(n.status == 200){
-  alert('message sent successfull')
-  localStorage.setItem('token',res.token)
+  console.log(n)
+  if(n.status == 201){
+   alert("message sent successfull")
+   location.reload()
+   window.location.href="contact.html"
   }
 }).catch(error=>{
   console.log(error)
 })
-    })
+})
     </script>
 
     <script src="/javascript/contact.js"></script>

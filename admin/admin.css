@@ -219,6 +219,7 @@ tr:hover td{
 }
 .container{
     height: 150vh;
+    overflow-y: scroll;
 }
 .main{
     display: flex;
@@ -226,8 +227,8 @@ tr:hover td{
     align-items: center;
     justify-content: right;
     width: 100%;
-    height: auto;
     background:rgb(121, 112, 112);
+    overflow-y: scroll;
 }
 .form{
     padding:15px 15px;
@@ -235,6 +236,7 @@ tr:hover td{
     border-radius: 5px;
     margin: 0 auto;
     width: 50%;
+    overflow-y: scroll;
    
  }
  label {

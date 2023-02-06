@@ -77,6 +77,8 @@ fetch("http://localhost:5700/users/login",newData)
   let k = res.token
   if(n.status == 200){
   alert('login successfull')
+  location.reload()
+   window.location.href="index.html"
   localStorage.setItem('token',res.token)
   }
 }).catch(error=>{
