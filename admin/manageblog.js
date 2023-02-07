@@ -119,6 +119,7 @@ console.log(blog_id, selectedId)
             const blog =  await response.json(); 
             if(blog.title == titleValue){
               alert("blog updated!!")
+              location.onload()
             }
             else(console.log(blog))  
           })
