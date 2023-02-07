@@ -1,3 +1,4 @@
+let selectedId =-1;
 const blogs_container= document.querySelector(".blogscreated")
   const sendbtn = document.querySelector('.submit');
   const formdata = document.querySelector(".form")
@@ -5,7 +6,24 @@ const blogs_container= document.querySelector(".blogscreated")
   const author_input = formdata["author"]
   const message_input = formdata["message"]
   const image_input = formdata["image"]
-
+ CKEDITOR.replace("message")
+ let blog_id = location.href.split("=")[1];
+ if(blog_id){
+  selectedId = blog_id
+  sendbtn.value = "Update Blog"
+fetch(`https://zedart-api.onrender.com/blogs/${selectedId}`, {
+    method: "GET"
+  }).then(response => response.json())
+  .then((data) => {
+    title_input.value = data.title
+    author_input.value = data.author
+    function submitaftersetdata() {
+      this.updateElement();
+  }
+  CKEDITOR.instances.message.setData(data.body,submitaftersetdata);
+  })
+ }
+ 
   const blogs = JSON.parse(localStorage.getItem("blogs")) || []
 
   const addblog = ( title, message) => {
@@ -50,35 +68,68 @@ formdata.onsubmit = (e) =>{
    e.preventDefault();
    const titleValue = title_input.value;
    const authorValue = author_input.value; 
-   const messageValue = message_input.value;
+   const messageValue = CKEDITOR.instances.message.getData();
    const imageValue = image_input.files
 
-   const newBlog = ()=>{
+   const newBlog = async()=>{
     // console.log("loaded")
-    try {
-      const reader = new FileReader();
-      reader.addEventListener('load', async()=>{
-        const response = await fetch('http://localhost:5700/blogs',{
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          title: titleValue,
-          author: authorValue,
-          image: reader.result,
-          body: messageValue
+    if (selectedId == -1){
+      try {
+        const reader = new FileReader();
+        reader.addEventListener('load', async()=>{
+          const response = await fetch('http://localhost:5700/blogs',{
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            title: titleValue,
+            author: authorValue,
+            image: reader.result,
+            body: messageValue
+          })
+          })
+          console.log(titleValue, authorValue, messageValue)
+          const blog =  await response.json(); 
+          if(blog.title == titleValue){
+            alert("blog created!!")
+          }
+          else(console.log(blog))  
         })
-        })
-        console.log(titleValue, authorValue, messageValue)
-        const blog =  await response.json(); 
-        if(blog.title == titleValue){
-          alert("blog created!!")
-        }
-        else(console.log(blog))  
-      })
-      reader.readAsDataURL(imageValue[0]);
-    } catch (error) {
-      console.log(error)
+        reader.readAsDataURL(imageValue[0]);
+      } catch (error) {
+        console.log(error)
+      }
     }
+    else{
+      if(selectedId == blog_id){
+        try {
+          // let selectedId = location.href.split("=")[1];
+console.log(blog_id, selectedId)
+          const reader = new FileReader();
+          reader.addEventListener('load', async()=>{
+            const response = await fetch(`http://localhost:5700/blogs/${blog_id}`,{
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              title: titleValue,
+              author: authorValue,
+              image: reader.result,
+              body: messageValue
+            })
+            })
+            const blog =  await response.json(); 
+            if(blog.title == titleValue){
+              alert("blog updated!!")
+            }
+            else(console.log(blog))  
+          })
+          reader.readAsDataURL(imageValue[0]);
+        } catch (error) {
+          console.log(error)
+        }
+      }
+     
+    }
+   
   }
   //  createblogelement(newBlog)
   newBlog()

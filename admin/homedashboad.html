@@ -113,7 +113,7 @@
                             <td>${cutStr(data.body,5)}...</td>
                             <td>${data.author}</td>
                             <td class="approve">
-                                <a href="#" onclick = 'update(${id})'>edit</a>
+                                <a href="createblog.html?id=${data._id}" onclick = 'update(${id})'>edit</a>
                             </td>
                             <td class="pedding">
                                 <a href="#" onclick = 'blogDelete(${id})'>delete</a>
@@ -126,6 +126,10 @@
     }
 
     displayBlogs();
+
+    async function update(id){
+        
+    }
 
     async function blogDelete(id){
             try {
