@@ -227,7 +227,8 @@ tr:hover td{
     align-items: center;
     justify-content: right;
     width: 100%;
-    background:rgb(121, 112, 112);
+    height: 700px;
+    background:rgb(199, 197, 197);
     overflow-y: scroll;
 }
 .form{
@@ -236,6 +237,7 @@ tr:hover td{
     border-radius: 5px;
     margin: 0 auto;
     width: 50%;
+    height: 470px;
     overflow-y: scroll;
    
  }
