@@ -44,10 +44,13 @@
 
     <div id="comment-form">
         <form>
-          <textarea id="comment-text" placeholder="Write your comment here"></textarea>
-          <button type="submit" id="submit-button">Submit</button>
+          <input type="text" id="name" placeholder="enter username" required>
+          <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
+          <button type="submit" id="submit-button">Send Comment</button>
         </form>
-        <div id="comments-display"></div>
+        <div id="comments-display">
+          
+        </div>
     </div>
    
    </main>
@@ -59,36 +62,35 @@
     </div>
  </footer>
  <script>
-    //for navigation bar
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar')
-
-menu.onclick = () => {
-  menu.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-};
-
-window.onscroll = () => {
-  menu.classList.remove('bx-b');
-  navbar.classList.remove('active');
-}
-
-const sr = ScrollReveal ({
-  distance: '60px',
-  duration: 2500,
-  reset: true
-})
-
-sr.reveal('.home-text',{delay:200, origin:'top'})
-sr.reveal('.home-img',{delay:400, origin:'top'})
-sr.reveal('.about, .service, .cta, .resume, .contact, .copyright')
-
-document.getElementById('submit-button').addEventListener('click', function (event) {
-  event.preventDefault();
-  const commentText = document.getElementById('comment-text').value;
-  const commentsDisplay = document.getElementById('comments-display');
-  commentsDisplay.innerHTML += `<p>${commentText}</p>`;
-});
+// const send = document.querySelector('#submit-button')
+// send.addEventListener('click', (event) => {
+//  event.preventDefault()
+//   var userData = {
+//     username:document.getElementById('name').value,
+//     idea: document.getElementById('comment-text').value
+//   };
+//   const  newData ={
+//     method:'POST',
+//     headers:{
+//       'Content-Type':"application/json"
+//     },
+//     body: JSON.stringify(userData)
+//   }
+//   console.log(newData)
+// fetch("http://localhost:5700/blogs/comments/blog_id",newData)
+// .then((n)=>{
+//   const res = n.json()
+//   console.log(res)
+//   console.log(n)
+//   if(n.status == 200){
+//    alert("Comment posted successfull")
+//    location.reload()
+//    window.location.href="blog2.html"
+//   }
+// }).catch(error=>{
+//   console.log(error)
+// })
+// })
  </script>
  <script src="/javascript/blog.js"></script>
 </body>

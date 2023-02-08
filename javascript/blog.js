@@ -65,11 +65,11 @@ const display_1_blogs = async() =>{
     
       singleblog.innerHTML = `<div class="oneblog">
           
-      <h1>${blogs.title}</h1><br>
+      
       <div class="card_img">
         <img src="${blogs.image.url}" alt="">
       </div><br>
-      
+      <h1>${blogs.title}</h1><br>
       <p>${blogs.body}</p>
       </div> `
 
