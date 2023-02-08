@@ -73,13 +73,17 @@ const  newData ={
 fetch("http://localhost:5700/users/login",newData)
 .then( async (n)=>{
   const res =  await n.json()
-  console.log(res)
   let k = res.token
-  if(n.status == 200){
-  alert('login successfull')
+  if(res.role == "admin"){
+  alert('You logged in as Admin')
   location.reload()
-   window.location.href="index.html"
+   window.location.href="admin/homedashboad.html"
   localStorage.setItem('token',res.token)
+  }
+  else{
+    alert(`welcome to ZEDArt!`)
+   location.reload()
+   window.location.href="index.html"
   }
 }).catch(error=>{
   console.log(error)
