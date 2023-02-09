@@ -74,7 +74,7 @@ Signup.addEventListener('click', (event) => {
     body: JSON.stringify(userData)
   }
   console.log(newData)
-fetch("https://zedart-api.onrender.com/users",newData)
+fetch("http://localhost:5700/users",newData)
 .then((n)=>{
   const res = n.json()
   console.log(res)

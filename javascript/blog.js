@@ -46,10 +46,7 @@ const display_blogs = async() =>{
         <div class="button">
         <a href="blog2.html?id=${data._id}" class="read_more">Read More</a>
         </div>
-        <div class="row">
-      <i class='bx bx-like' >10</i>
-      <i class='bx bx-message' >10</i>
-      </div>
+    
       </div>
       
       </div> `

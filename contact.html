@@ -119,7 +119,7 @@ send.addEventListener('click', (event) => {
     body: JSON.stringify(userData)
   }
   console.log(newData)
-fetch("https://zedart-api.onrender.com/messages",newData)
+fetch("http://localhost:5700/messages",newData)
 .then((n)=>{
   const res = n.json()
   console.log(res)
