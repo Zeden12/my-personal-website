@@ -38,11 +38,7 @@
           
 
       </div>
-      <div class="sideblog">
-
-        
-      </div>
-
+   
     </div>
    
 
@@ -81,6 +77,51 @@
     }
  
 </script>
+
+<script>
+
+  const send = document.querySelector('#submit-button')
+   button.addEventListener("click", async () => {
+  
+    let date = new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getFullYear();
+    let Time = new Date().getHours() + ' : ' + new Date().getMinutes() + ' : ' + new Date().getSeconds();
+    let username = name.value
+    let Comment = datas.value
+    let comment = {
+        date,
+        Time,
+        username,
+        Comment
+    }
+    console.log(comment)
+    const token = localStorage.getItem("AdminToken");
+    const createComment = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(comment)
+    };
+    console.log(createComment)
+    fetch('https://zedart-api.onrender.com/blogs/comments/' + id, createComment)
+        .then(async (data) => {
+            const res = await data.json()
+            alert(res.message ="comment added");
+          location.reload()
+  
+            if (!data.ok) {
+                throw Error(data.status);
+            }
+  
+        }).catch(err => {
+            console.log(err);
+        });
+    
+  })
+
+</script>
  <script src="/javascript/blog.js"></script>
+
 </body>
 </html>

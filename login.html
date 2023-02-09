@@ -70,7 +70,7 @@ const  newData ={
     body: JSON.stringify(loginData)
   }
  // console.log(newData)
-fetch("https://zedart-api.onrender.com/users/login",newData)
+fetch("http://localhost:5700/users/login",newData)
 .then( async (n)=>{
   const res =  await n.json()
   let k = res.token
@@ -81,7 +81,7 @@ fetch("https://zedart-api.onrender.com/users/login",newData)
   localStorage.setItem('token',res.token)
   }
   else{
-    alert(`welcome to ZEDArt!`)
+    alert("welcome to ZEDArt!")
    location.reload()
    window.location.href="index.html"
   }
