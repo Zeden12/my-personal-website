@@ -127,6 +127,25 @@ p {
 
 }
 
+.row i{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color: rgb(4, 4, 3);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 10px 20px;
+}
+
+.gridi{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 30px auto;
+    box-shadow: 2px 2px 5px rgb(251, 154, 102);
+    margin-bottom: 10px;
+}
+
 #comment-form {
   margin-left: 10%;    
   width: 500px;

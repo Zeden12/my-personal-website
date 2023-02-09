@@ -34,15 +34,20 @@
     </div>
 
     <div id="singleblog">
-
       <div class="gridi" id="blog_side">
           
 
       </div>
+      <div class="sideblog">
+
+        
+      </div>
 
     </div>
+   
 
     <div id="comment-form">
+      
         <form>
           <input type="text" id="name" placeholder="enter username" required>
           <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
@@ -62,36 +67,20 @@
     </div>
  </footer>
  <script>
-// const send = document.querySelector('#submit-button')
-// send.addEventListener('click', (event) => {
-//  event.preventDefault()
-//   var userData = {
-//     username:document.getElementById('name').value,
-//     idea: document.getElementById('comment-text').value
-//   };
-//   const  newData ={
-//     method:'POST',
-//     headers:{
-//       'Content-Type':"application/json"
-//     },
-//     body: JSON.stringify(userData)
-//   }
-//   console.log(newData)
-// fetch("http://localhost:5700/blogs/comments/blog_id",newData)
-// .then((n)=>{
-//   const res = n.json()
-//   console.log(res)
-//   console.log(n)
-//   if(n.status == 200){
-//    alert("Comment posted successfull")
-//    location.reload()
-//    window.location.href="blog2.html"
-//   }
-// }).catch(error=>{
-//   console.log(error)
-// })
-// })
- </script>
+    let menu = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar')
+    
+    menu.onclick = () => {
+      menu.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    };
+    
+    window.onscroll = () => {
+      menu.classList.remove('bx-b');
+      navbar.classList.remove('active');
+    }
+ 
+</script>
  <script src="/javascript/blog.js"></script>
 </body>
 </html>

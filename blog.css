@@ -223,6 +223,14 @@ a.read_more:hover{
     background-color: black;
 }
 
+.row i{
+    color: orange;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 5px 10px;
+}
+
 
   
 .footer{

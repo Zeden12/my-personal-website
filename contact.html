@@ -87,6 +87,22 @@
     </footer>
 
     <script>
+        let menu = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar')
+        
+        menu.onclick = () => {
+          menu.classList.toggle('bx-x');
+          navbar.classList.toggle('active');
+        };
+        
+        window.onscroll = () => {
+          menu.classList.remove('bx-b');
+          navbar.classList.remove('active');
+        }
+        
+    </script>
+
+    <script>
 const send = document.querySelector('.send-btn')
 send.addEventListener('click', (event) => {
  event.preventDefault()

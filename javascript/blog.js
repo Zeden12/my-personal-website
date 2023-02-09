@@ -46,7 +46,12 @@ const display_blogs = async() =>{
         <div class="button">
         <a href="blog2.html?id=${data._id}" class="read_more">Read More</a>
         </div>
+        <div class="row">
+      <i class='bx bx-like' >10</i>
+      <i class='bx bx-message' >10</i>
       </div>
+      </div>
+      
       </div> `
     })
   }
@@ -71,6 +76,14 @@ const display_1_blogs = async() =>{
       </div><br>
       <h1>${blogs.title}</h1><br>
       <p>${blogs.body}</p>
+      <div class="row">
+      <i class='bx bx-like' >10</i>
+      <i class='bx bx-message' >10</i>
+      </div>
+      
+      <div class="gridi" id="blog_side">
+
+      </div>
       </div> `
 
   }
