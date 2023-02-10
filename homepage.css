@@ -21,7 +21,7 @@
     --main-color: rgba(255, 133, 33, 1);
     --2nd-main-color: #ffffffcc;
     --text-color: black;
-    --big-font: 5rem;
+    --big-font: 4rem;
     --h2-font: 1.9rem;
     --p-font: 1rem;
 }
@@ -87,7 +87,7 @@ section{
     max-width: 100%;
     width: 370px;
     height: 75vh;
-    bottom: 20px;
+    bottom: 30px;
 }
 .home-text h5{
     color: var(--text-color);
