@@ -28,7 +28,7 @@ displayMessages();
 
 async function messageDelete(id){
     try {
-        const response = await fetch(`http://localhost:5700/messages/${id}`,{
+        const response = await fetch(`https://zedart-api.onrender.com/messages/${id}`,{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
         })

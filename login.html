@@ -70,7 +70,7 @@ const  newData ={
     body: JSON.stringify(loginData)
   }
  // console.log(newData)
-fetch("http://localhost:5700/users/login",newData)
+fetch("https://zedart-api.onrender.com/users/login",newData)
 .then( async (n)=>{
   const res =  await n.json()
   let k = res.token
