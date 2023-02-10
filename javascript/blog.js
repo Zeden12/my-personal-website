@@ -1,3 +1,9 @@
+//get token and set to header
+const userToken = localStorage.getItem('userToken');
+const header = new Headers();
+header.append('Content-Type', 'application/json');
+header.append('Authorization', `Bearer ${userToken}`)
+
 const readmore = document.querySelectorAll('.read_more')
     
     function reveal(parent){
@@ -73,10 +79,7 @@ const display_1_blogs = async() =>{
       </div><br>
       <h1>${blogs.title}</h1><br>
       <p>${blogs.body}</p>
-      <div class="row">
-      <i class='bx bx-like' >10</i>
-      <i class='bx bx-message' >10</i>
-      </div>
+      
       
       <div class="gridi" id="blog_side">
 
@@ -87,15 +90,60 @@ const display_1_blogs = async() =>{
 }
 
 display_1_blogs()
-//for card 1
+
+  const likee = document.getElementById("like")
+  // if(likee){
+   
+  //   let like_blog_id = location.href.split('=')[1];
+  //   likee.addEventListener("click",async()=>{
+  //     const response = await fetch(`https://zedart-api.onrender.com/blogs/${like_blog_id}/like`,{
+  //       method: 'PUT',
+  //       headers: {'Content-Type': 'application/json'}
+  //   }); 
+  //     likee.classList.add("like")
+  //   })
+  // }
+let likeQty = document.getElementById("like");
+console.log(likeQty)
+if (likee) {
+  let like_blog_id = location.href.split('=')[1];
+    likee.addEventListener("click",async()=>{
+        if(userToken === null){
+            const coreMsg = 'login first!'
+            alert(coreMsg)
+        }
+        try {
+            const response = await fetch(`https://zedart-api.onrender.com/blogs/${like_blog_id}/like`,{
+                method: 'PUT',
+                headers: header
+            });
+            const res =  await response.json();
+            if(res.status == 'liked'){
+                likee.classList.add('liking')
+                likee.innerHTML = res.like.count
+                console.log(res.like.count)
+                // countLike()
+            }else if(res.status == 'unliked'){
+                likee.classList.remove('liking')
+                likee.innerHTML = res.like.count
+                // countLike()
+                console.log(res.like.count)
+            }
+        } catch (error) {
+            if (localStorage.getItem('userToken')) {
+                localStorage.removeItem('userToken');
+                location.reload()
+            }
+        }
+    })
+}
+  
+
 
 const card_title1 = document.getElementById("card_title1");
 const card_story1 = document.getElementById("card_story1"); 
 
-// let blog1 = blogs[0]  
-// console.log(blog1)
-// card_title1.innerHTML= blog1.title
-// card_story1.innerHTML = blog1.message
+
 
 
 

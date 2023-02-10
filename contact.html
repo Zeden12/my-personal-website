@@ -123,12 +123,12 @@ fetch("https://zedart-api.onrender.com/messages",newData)
 .then((n)=>{
   const res = n.json()
   console.log(res)
-  console.log(n)
   if(n.status == 200){
    alert("message sent successfull")
    location.reload()
    window.location.href="contact.html"
   }
+
 }).catch(error=>{
   console.log(error)
 })
