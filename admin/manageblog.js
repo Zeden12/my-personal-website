@@ -6,6 +6,7 @@ window.location.replace('../login.html');
 const logout = document.querySelector('.logout');
 logout.addEventListener('click',()=>{
     localStorage.removeItem('adminToken');
+    alert("You logged out")
     window.location.replace('../login.html');
 })
 
