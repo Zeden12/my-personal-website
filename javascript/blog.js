@@ -66,6 +66,7 @@ const display_1_blogs = async() =>{
   const singleblog = document.getElementById("singleblog");
   if(singleblog){
     let blog_id = location.href.split("=")[1];
+    console.log(blog_id)
     const response = await fetch(`https://zedart-api.onrender.com/blogs/${blog_id}`, {
       method: "GET"
     });
@@ -136,6 +137,8 @@ console.log(res)
 }
   
 likeCount()
+
+
 
 const card_title1 = document.getElementById("card_title1");
 const card_story1 = document.getElementById("card_story1"); 

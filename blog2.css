@@ -128,13 +128,13 @@ p {
 }
 
 .row i{
-    /* color: rgb(56, 56, 188); */
+    color: rgb(56, 56, 188);
     font-size: 1.5rem;
     margin-left: 5rem;
     padding: 10px 0;
 }
 
-.like{
+.likee{
     
     color: blue;
 }
