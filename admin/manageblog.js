@@ -1,3 +1,15 @@
+const adminToken = JSON.parse(localStorage.getItem('adminToken'));
+if (adminToken == null) {
+window.location.replace('../login.html');
+}
+// logout
+const logout = document.querySelector('.logout');
+logout.addEventListener('click',()=>{
+    localStorage.removeItem('adminToken');
+    window.location.replace('../login.html');
+})
+
+
 let selectedId =-1;
 const blogs_container= document.querySelector(".blogscreated")
   const sendbtn = document.querySelector('.submit');

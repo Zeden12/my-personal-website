@@ -42,12 +42,8 @@
     </div>
 
     <div class="row">
-        <div class="">
         <i class='bx bx-like'  id="like"></i>
-        </div>
-        <div id="messagee">
         <i class='bx bx-message'>10</i>
-        </div>
     </div>
    
 
@@ -89,7 +85,7 @@
 
 <script>
 
-  const send = document.querySelector('#submit-button')
+  const button = document.querySelector('#submit-button')
    button.addEventListener("click", async () => {
   
     let date = new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getFullYear();

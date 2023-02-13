@@ -47,7 +47,7 @@ const display_blogs = async() =>{
       <p class="date">${data.date}</p>
       <p class="card_author"><a href="https://www.linkedin.com/in/kwizera-haguma-ernest-709195241">${data.author}</a></p>
         <h2 class="card_title"  id ="card_title3">${data.title}</h2>
-        <p>${cutStr(data.body,20)}...</p>
+        <p>${cutStr(data.body,15)}...</p>
         <p class ="revealmore"></p>
         <div class="button">
         <a href="blog2.html?id=${data._id}" class="read_more">Read More</a>
@@ -92,17 +92,7 @@ const display_1_blogs = async() =>{
 display_1_blogs()
 
   const likee = document.getElementById("like")
-  // if(likee){
-   
-  //   let like_blog_id = location.href.split('=')[1];
-  //   likee.addEventListener("click",async()=>{
-  //     const response = await fetch(`https://zedart-api.onrender.com/blogs/${like_blog_id}/like`,{
-  //       method: 'PUT',
-  //       headers: {'Content-Type': 'application/json'}
-  //   }); 
-  //     likee.classList.add("like")
-  //   })
-  // }
+
 let likeQty = document.getElementById("like");
 console.log(likeQty)
 if (likee) {
@@ -121,13 +111,11 @@ if (likee) {
             if(res.status == 'liked'){
                 likee.classList.add('liking')
                 likee.innerHTML = res.like.count
-                console.log(res.like.count)
-                // countLike()
+                likeCount()
             }else if(res.status == 'unliked'){
                 likee.classList.remove('liking')
                 likee.innerHTML = res.like.count
-                // countLike()
-                console.log(res.like.count)
+                likeCount()
             }
         } catch (error) {
             if (localStorage.getItem('userToken')) {
@@ -137,8 +125,17 @@ if (likee) {
         }
     })
 }
-  
 
+const likeCount = async() => {
+  let like_blog_id = location.href.split('=')[1];
+  const response = await fetch(`https://zedart-api.onrender.com/blogs/${like_blog_id}/likes`);
+const res =  await response.json();
+
+likeQty.innerHTML = res
+console.log(res)
+}
+  
+likeCount()
 
 const card_title1 = document.getElementById("card_title1");
 const card_story1 = document.getElementById("card_story1"); 
