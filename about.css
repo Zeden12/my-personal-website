@@ -75,7 +75,7 @@ span{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
 .skills-heading h4{
     margin-top: 3px;
@@ -90,6 +90,8 @@ span{
     grid-gap: 2rem;
     align-items: center;
     margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .box{
     background: white;

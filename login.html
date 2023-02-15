@@ -25,7 +25,7 @@
             <li><a href="/portifolio.html">Portifolio</a></li>
             <li><a href="/blog.html">Blogs</a></li>
             <li><a href="/contact.html">contact</a></li>
-            
+            <li><a href="/login.html" id="dashboard">Login</a></li>
         </ul>
     </header> 
     <div class="wrapper">
@@ -54,6 +54,39 @@
         </div>
     </footer>
     <script>
+    const dashboard = document.querySelector('#dashboard')
+    const adminToken = localStorage.getItem('adminToken')
+    function LoginAdmin(){
+        if(!adminToken){}
+        else{
+            dashboard.innerHTML = 'dashboard'
+            dashboard.setAttribute('href',"/admin/homedashboad")
+        }
+    }
+
+    LoginAdmin()
+
+    const userToken = localStorage.getItem('userToken')
+    function LoginUser(){
+        if(!userToken){}
+        else{
+            dashboard.innerHTML = "Logout"
+
+        }
+    }
+
+    LoginUser()
+
+    function logoutUser(){
+        window.localStorage.removeItem('userToken')
+    }
+
+    dashboard.addEventListener('click', (e) => {
+        e.preventDefault()
+        logoutUser()
+        location.reload()
+    })
+
     const Login = document.querySelector('.button1')
     Login.addEventListener('click', async(event) => {
         event.preventDefault()

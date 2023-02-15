@@ -85,7 +85,7 @@ span{
 }
 
 .container {
-    max-width: 80%;
+    max-width: 90%;
     margin: 20px auto;
     height: 80%;
     margin-bottom: 50px;
@@ -94,7 +94,7 @@ span{
 .card {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     margin: 30px auto;
     box-shadow: 2px 2px 5px rgb(251, 154, 102);
     margin-bottom: 10px;
