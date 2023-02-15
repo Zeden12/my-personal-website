@@ -25,7 +25,7 @@
             <li><a href="/portifolio.html">Portifolio</a></li>
             <li><a href="/blog.html">Blogs</a></li>
             <li><a href="/contact.html">contact</a></li>
-            <li><a href="/Login.html">Login</a></li>
+            <li><a href="/Login.html" id="dashboard">Login</a></li>
         </ul>
     </header>
 
@@ -144,6 +144,38 @@ const display_1_comment = async() =>{
 }
 
 display_1_comment()
+
+const dashboard = document.querySelector('#dashboard')
+    const adminToken = localStorage.getItem('adminToken')
+    function LoginAdmin(){
+        if(!adminToken){}
+        else{
+           
+            const link =  document.querySelector(".navbar")
+            console.log(link)
+            const dashi = document.createElement('li')
+            const dash = document.createElement('a')
+            dash.setAttribute('href','./admin/homedashboad.html')
+            dash.innerHTML = "dashbord"
+            dashi.append(dash)
+            link.append(dashi)
+            dashboard.innerHTML = "logout"
+            dashboard.parentElement.remove()
+        }
+    }
+
+    LoginAdmin()
+
+    const userToken = localStorage.getItem('userToken')
+    function LoginUser(){
+        if(!userToken){}
+        else{
+            dashboard.innerHTML = "Logout"
+
+        }
+    }
+
+    LoginUser()
 
 </script>
  <script src="/javascript/blog.js"></script>

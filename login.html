@@ -59,8 +59,17 @@
     function LoginAdmin(){
         if(!adminToken){}
         else{
-            dashboard.innerHTML = 'dashboard'
-            dashboard.setAttribute('href',"/admin/homedashboad")
+           
+            const link =  document.querySelector(".navbar")
+            console.log(link)
+            const dashi = document.createElement('li')
+            const dash = document.createElement('a')
+            dash.setAttribute('href','./admin/homedashboad.html')
+            dash.innerHTML = "dashbord"
+            dashi.append(dash)
+            link.append(dashi)
+            dashboard.innerHTML = "logout"
+            dashboard.parentElement.remove()
         }
     }
 
